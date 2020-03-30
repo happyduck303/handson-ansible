@@ -1,0 +1,14 @@
+  120  ansible webservers -i inventory_prod -m apt -a "name=apache2 state=present --sudo "
+  121  ansible webservers -i inventory_prod -m apt -a "name=apache2 state=present" --sudo
+  122  ansible webservers -i inventory_prod -m service -a "name=apache2 enabled=yes state=started" --sudo
+  123  curl -i localhost
+  124  ansible dbservers -i inventory_prod  -m apt -a "name=mysql-server state=present" --sudo
+  125  ansible webservers -i inventory_prod -m apt -a "name=curl state=present" --sudo
+  126  curl -i localhost
+  127  service mysql status
+  128  ansible dbservers -i inventory_prod -m service -a "name=mysql state=started" --sudo
+  129  ansible dbservers -i inventory_prod -m service -a "name=mysql state=stop" --sudo
+  130  ansible dbservers -i inventory_prod -m service -a "name=mysql state=stoped" --sudo
+  131  ansible dbservers -i inventory_prod -m service -a "name=mysql state=stopped" --sudo
+  132  service mysql status
+  133  ansible dbservers -i inventory_prod -m service -a "name=mysql state=started" --sudo

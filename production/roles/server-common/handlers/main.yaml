@@ -1,0 +1,7 @@
+---
+- name: SNMP Restart
+  service: name=snmp state=restartd
+
+- name: Syslog Restart
+  service: name=rsyslog state=restarted
+
